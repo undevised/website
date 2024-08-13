@@ -1,6 +1,8 @@
 :root {
-  --primary: #222;
-  --secondary: #fdf6e3;
+  --text: #222222;
+  --background: #fcf7f1;
+  --primary: #73ac85;
+  --secondary: #c1d6a8;
   --accent: #008080;
 }
 
@@ -9,8 +11,9 @@ body {
   font-size: 16px;
   margin: auto;
   padding: 1rem;
-  max-width: 80ch;
-  color: var(--primary);
+  max-width: 100ch;
+  color: var(--text);
+  background-color: var(--background);
   overflow-wrap: break-word;
 }
 
@@ -43,4 +46,32 @@ details[open] summary {
 
 footer {
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 1rem 0;
+
+  img {
+    border: 8px solid white;
+    box-sizing: border-box;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+.metadata {
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5em;
+  }
 }
