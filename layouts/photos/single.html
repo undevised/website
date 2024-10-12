@@ -2,12 +2,15 @@
 
 <article>
   <main>
-    {{ range .Resources.ByType "image" }}
+    <h1>{{ $.Title }}</h1>
 
-    {{ with .Fit "1200x1200" }}
+    {{ range .Resources.ByType "image" }}
+    {{ with . | images.Filter images.AutoOrient }}
+
+    {{ with .Fit "1200x800"  }}
     <figure>
-      <figcaption>{{ .Title }}</figcaption>
       <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+      <figcaption>{{ $.Description }}</figcaption>
     </figure>
     {{ end }}
 
@@ -22,9 +25,8 @@
       {{ with .Tags.ISOSpeedRatings }}<li><img src="/icons/iso.svg" width="24" height="24" alt="dot grid" title="ISO"><span>{{ . }}</span></li>{{ end }}
     </ul>
     {{ end }}
-    
-    {{ $.Content }}
 
+    {{ end }}
     {{ end }}
   </main>
 </article>
