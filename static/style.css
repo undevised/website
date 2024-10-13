@@ -45,6 +45,7 @@ details[open] summary {
 }
 
 footer {
+  margin-top: 3em;
   text-align: center;
 }
 
@@ -74,5 +75,17 @@ figure {
     display: flex;
     align-items: flex-end;
     gap: 0.5em;
+  }
+}
+
+.recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 1em;
+    margin-bottom: 1em;
   }
 }
