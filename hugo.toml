@@ -1,3 +1,6 @@
 baseURL = 'https://undevised.com'
 languageCode = 'en-gb'
 title = 'undevised'
+
+[imaging]
+  quality = 90
