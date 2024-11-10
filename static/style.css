@@ -1,6 +1,6 @@
 :root {
   --text: #222222;
-  --background: #fcf7f1;
+  --background: #fdf6e3;
   --primary: #73ac85;
   --secondary: #c1d6a8;
   --accent: #008080;
@@ -11,7 +11,7 @@ body {
   font-size: 16px;
   margin: auto;
   padding: 1rem;
-  max-width: 100ch;
+  max-width: 120ch;
   color: var(--text);
   background-color: var(--background);
   overflow-wrap: break-word;
@@ -27,12 +27,12 @@ nav {
 }
 
 li:not(:last-child) {
-  margin-bottom: 0.25em;
+  margin-bottom: .25em;
 }
 
 details {
   padding: 0.5em;
-  border-radius: 0.5em;
+  border-radius: .5em;
   background-color: var(--secondary);
 }
 
@@ -41,7 +41,7 @@ summary {
 }
 
 details[open] summary {
-  margin-bottom: 0.5em;
+  margin-bottom: .5em;
 }
 
 footer {
@@ -70,11 +70,14 @@ figure {
 
 .metadata {
   list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: fit-content;
 
   li {
     display: flex;
     align-items: flex-end;
-    gap: 0.5em;
+    gap: .5em;
   }
 }
 
@@ -91,26 +94,22 @@ figure {
 }
 
 .photo-list {
+  list-style: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  gap: .5em;
   padding: 0;
   margin: 0;
 
   li {
-    height: 20vh;
-    flex-grow: 1;
-    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   img {
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    vertical-align: bottom;
-    border: 2px solid white;
-  }
-
-  li:last-child {
-    flex-grow: 0;
+    border: .3em solid white;
+    max-height: 25vh;
   }
 }

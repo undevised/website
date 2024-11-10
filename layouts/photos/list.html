@@ -2,9 +2,6 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 
-{{ range .Pages.GroupByDate "Jan 2006" }}
-<h2>{{ .Key }}</h2>
-
 <ul class="photo-list">
   {{ range .Pages }}
   {{ $thumbnail := index (.Resources.ByType "image") 0 | images.Filter images.AutoOrient }}
@@ -16,5 +13,4 @@
   </li>
   {{ end }}
 </ul>
-{{ end }}
 {{ end }}

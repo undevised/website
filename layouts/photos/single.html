@@ -2,8 +2,6 @@
 
 <article>
   <main>
-    <h1>{{ $.Title }}</h1>
-
     {{ range .Resources.ByType "image" }}
     {{ with . | images.Filter images.AutoOrient }}
 
