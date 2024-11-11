@@ -81,6 +81,14 @@ figure {
   }
 }
 
+.previous-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  margin: 1em auto;
+}
+
 .photo {
   border: 8px solid white;
   box-shadow: rgba(149, 157, 165, 0.1) 0px 4px 8px;

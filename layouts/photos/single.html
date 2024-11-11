@@ -2,6 +2,16 @@
 
 <article>
   <main>
+    <div class="previous-next">
+    {{ with .Prev }}
+      <a href="{{ .RelPermalink }}">← Previous</a>
+    {{ end }}
+    
+    {{ with .Next }}
+      <a href="{{ .RelPermalink }}">Next →</a>
+    {{ end }}
+    </div>
+  
     {{ range .Resources.ByType "image" }}
     {{ with . | images.Filter images.AutoOrient }}
 
