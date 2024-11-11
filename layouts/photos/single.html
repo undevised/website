@@ -5,9 +5,9 @@
     {{ range .Resources.ByType "image" }}
     {{ with . | images.Filter images.AutoOrient }}
 
-    {{ with .Fit "1200x800"  }}
+    {{ with .Resize "x900" }}
     <figure>
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+      <img class="photo" src="{{ .RelPermalink }}" alt="{{ .Title }}" width="{{ .Width }}" height="{{ .Height }}">
       <figcaption>{{ $.Description }}</figcaption>
     </figure>
     {{ end }}

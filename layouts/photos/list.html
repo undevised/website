@@ -8,7 +8,7 @@
   {{ $thumbnail = $thumbnail.Fit "600x600" }}
   <li>
     <a href="{{ .RelPermalink }}" title="{{ .Title }}">
-      <img src="{{ $thumbnail.RelPermalink }}" alt="{{ .Description }}">
+      <img class="photo" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" alt="{{ .Description }}" loading="lazy">
     </a>
   </li>
   {{ end }}

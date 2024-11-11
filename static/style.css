@@ -10,11 +10,16 @@ body {
   font-family: Helvetica, sans-serif;
   font-size: 16px;
   margin: auto;
-  padding: 1rem;
+  padding: 1em .5em;
   max-width: 120ch;
   color: var(--text);
   background-color: var(--background);
   overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
 }
 
 a {
@@ -31,7 +36,7 @@ li:not(:last-child) {
 }
 
 details {
-  padding: 0.5em;
+  padding: .5em;
   border-radius: .5em;
   background-color: var(--secondary);
 }
@@ -51,17 +56,12 @@ footer {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 figure {
   margin: 1em 0;
   text-align: center;
-
-  img {
-    border: 8px solid white;
-    box-sizing: border-box;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
 
   figcaption {
     line-height: 2em;
@@ -81,16 +81,9 @@ figure {
   }
 }
 
-.recipe-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    border-bottom: 1px solid lightgrey;
-    padding: 0 1em;
-    margin-bottom: 1em;
-  }
+.photo {
+  border: 8px solid white;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 4px 8px;
 }
 
 .photo-list {
@@ -109,7 +102,19 @@ figure {
   }
 
   img {
-    border: .3em solid white;
-    max-height: 25vh;
+    max-height: 320px;
+    width: auto;
+  }
+}
+
+.recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    border-bottom: 1px solid lightgrey;
+    padding: 0 1em;
+    margin-bottom: 1em;
   }
 }
