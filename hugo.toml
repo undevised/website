@@ -2,5 +2,7 @@ baseURL = 'https://undevised.com'
 languageCode = 'en-gb'
 title = 'undevised'
 
+disablePathToLower = true
+
 [imaging]
   quality = 90
