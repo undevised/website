@@ -32,6 +32,7 @@
 
     {{ with .Exif }}
     <ul class="metadata">
+      {{ with $.Params.location }}<li><img src="/icons/location.svg" width="24" height="24" alt="location" title="Location">{{ . }}</li>{{ end }}
       {{ with .Date }}<li><img src="/icons/calendar.svg" width="24" height="24" alt="calendar" title="Date">{{ .Format "January 02, 2006" }}</li>{{ end }}
       {{ with .Tags.Model }}<li><img src="/icons/camera.svg" width="24" height="24" alt="camera" title="Camera">{{ . }}</li>{{ end }}
       {{ with .Tags.LensModel }}<li><img src="/icons/lens.svg" width="24" height="24" alt="circle" title="Lens">{{ . }}</li>{{ end }}
