@@ -3,11 +3,19 @@
 <article>
   <main>
     <div class="previous-next">
-    {{ with .Prev }}
-      <a href="{{ .RelPermalink }}">← Previous</a>
+    {{ $prev := .PrevInSection }}
+    {{ if not $prev }}
+      {{ $prev = index .CurrentSection.RegularPages 0 }}
     {{ end }}
-    
-    {{ with .Next }}
+    {{ with $prev }}
+      <a href="{{ .RelPermalink }}">← Previous</a>
+    {{ end }} 
+
+    {{ $next := .NextInSection }}
+    {{ if not $next }} 
+      {{ $next = index .CurrentSection.RegularPages (sub (len .CurrentSection.RegularPages) 1) }}
+    {{ end }}
+    {{ with $next }}
       <a href="{{ .RelPermalink }}">Next →</a>
     {{ end }}
     </div>
