@@ -1,0 +1,9 @@
+<ul class="recipe-list">
+  {{ range . }}
+  <li>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description }}<p>
+    <p>{{ .Params.time }} • Serves {{ .Params.yield }}</p>
+  </li>
+  {{ end }}
+</ul>

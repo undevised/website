@@ -15,11 +15,6 @@ body {
   color: var(--text);
   background-color: var(--background);
   overflow-wrap: break-word;
-  box-sizing: border-box;
-}
-
-* {
-  box-sizing: inherit;
 }
 
 a {
@@ -55,13 +50,13 @@ footer {
 }
 
 img {
-  max-width: 100%;
   height: auto;
 }
 
 figure {
   margin: 1em 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 
   figcaption {
     line-height: 2em;
@@ -102,7 +97,6 @@ figure {
   flex-wrap: wrap;
   gap: .5em;
   padding: 0;
-  margin: 0;
 
   li {
     margin: 0;
@@ -117,12 +111,17 @@ figure {
 
 .recipe-list {
   list-style: none;
-  margin: 0;
   padding: 0;
 
   li {
-    border-bottom: 1px solid lightgrey;
-    padding: 0 1em;
-    margin-bottom: 1em;
+    padding: 1em;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid lightgrey;
+    }
   }
+}
+
+.home-section {
+  margin-bottom: 1em;
 }

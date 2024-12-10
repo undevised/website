@@ -1,16 +1,5 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-
-<ul class="photo-list">
-  {{ range .Pages }}
-  {{ $thumbnail := index (.Resources.ByType "image") 0 | images.Filter images.AutoOrient }}
-  {{ $thumbnail = $thumbnail.Fit "600x600" }}
-  <li>
-    <a href="{{ .RelPermalink }}" title="{{ .Title }}">
-      <img class="photo" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" alt="{{ .Description }}" loading="lazy">
-    </a>
-  </li>
-  {{ end }}
-</ul>
+{{ partial "photo-list.html" .Pages }}
 {{ end }}
