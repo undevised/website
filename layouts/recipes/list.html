@@ -1,13 +1,5 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-<ul class="recipe-list">
-  {{ range .Pages }}
-  <li>
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    <p>{{ .Description }}<p>
-    <p>{{ .Params.time }} • Serves {{ .Params.yield }}</p>
-  </li>
-  {{ end }}
-</ul>
+{{ partial "recipe-list.html" .Pages }}
 {{ end }}

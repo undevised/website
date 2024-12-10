@@ -1,12 +1,17 @@
 {{ define "main" }}
-{{ range .Sections }}
-<h2>{{ .Title }}</h2>
-<ul>
-  {{ range .Pages }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </li>
-  {{ end }}
-</ul>
-{{ end }}
+
+<header>
+  <h1>{{ .Title }}</h1>
+</header>
+
+<div class="home-section">
+  {{ partial "home-section-heading.html" "photos" }}
+  {{ partial "photo-list.html" (where .Site.RegularPages "Section" "photos" | first 2) }}
+</div>
+
+<div class="home-section">
+  {{ partial "home-section-heading.html" "recipes" }}
+  {{ partial "recipe-list.html" (where .Site.RegularPages "Section" "recipes" | first 2) }}
+</div>
+
 {{ end }}
