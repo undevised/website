@@ -38,7 +38,7 @@
       {{ with .Tags.LensModel }}<li><img src="/icons/lens.svg" width="24" height="24" alt="circle" title="Lens">{{ . }}</li>{{ end }}
       {{ with .Tags.ExposureTime }}<li><img src="/icons/shutter-speed.svg" width="24" height="24" alt="shutter timer" title="Shutter Speed">{{ . }}s</li>{{ end }}
       {{ with .Tags.FNumber.Float64 }}<li><img src="/icons/aperture.svg" width="24" height="24" alt="aperture" title="F Number">f/{{ . }}</li>{{ end }}
-      {{ with .Tags.FocalLength.Float64 }}<li><img src="/icons/ruler.svg" width="24" height="24" alt="ruler" title="Focal Length">{{ . }}mm</li>{{ end }}
+      {{ with .Tags.FocalLength | math.Round }}<li><img src="/icons/ruler.svg" width="24" height="24" alt="ruler" title="Focal Length">{{ . }}mm</li>{{ end }}
       {{ with .Tags.ISOSpeedRatings }}<li><img src="/icons/iso.svg" width="24" height="24" alt="dot grid" title="ISO"><span>{{ . }}</span></li>{{ end }}
     </ul>
     {{ end }}
