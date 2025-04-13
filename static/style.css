@@ -1,8 +1,8 @@
 :root {
-  --text: #222222;
+  --text: #002b36;
   --background: #fdf6e3;
   --primary: #73ac85;
-  --secondary: #c1d6a8;
+  --secondary: #d9e1d0;
   --accent: #008080;
 }
 
@@ -15,6 +15,24 @@ body {
   color: var(--text);
   background-color: var(--background);
   overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: .5em 0;
+}
+
+p {
+  margin-top: .5em;
+}
+
+ul,
+ol {
+  margin: 0;
 }
 
 a {
@@ -114,7 +132,7 @@ figure {
   padding: 0;
 
   li {
-    padding: 1em;
+    padding: .5em;
 
     &:not(:last-child) {
       border-bottom: 1px solid lightgrey;
