@@ -7,10 +7,13 @@
       <h2><a href={{ .RelPermalink }}>{{ .Title }}</a></h2>
       <p><i>{{ .Date.Month }} {{ .Date.Day | humanize }}, {{ .Date.Year }}</i></p>
     </header>
-  
-    {{ .Summary }}
 
-    <i><a href={{ .RelPermalink }}>Read on...</a></i>
+    <div class="link">
+      {{- $domain := (urls.Parse .Params.target).Host | replaceRE "^www." "" }}
+      <b><a href={{ .Params.target }} target="_blank">{{ .Params.text }}</a></b> (<span>{{ $domain }}</span>)
+    </div>
+  
+    {{ .Content }}
   </article>
 {{ end }}
 {{ end }}

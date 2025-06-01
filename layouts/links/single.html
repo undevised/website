@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p><i>{{ .Date.Month }} {{ .Date.Day | humanize }}, {{ .Date.Year }}</i></p>
+  </header>
+
+  <div class="link">
+    {{- $domain := (urls.Parse .Params.target).Host | replaceRE "^www." "" }}
+    <b><a href={{ .Params.target }} target="_blank">{{ .Params.text }}</a></b> (<span>{{ $domain }}</span>)
+  </div>
+  
+  {{ .Content }}
+</article>
+{{ end }}

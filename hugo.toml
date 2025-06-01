@@ -4,5 +4,7 @@ title = 'undevised'
 
 disablePathToLower = true
 
+summaryLength = 10
+
 [imaging]
   quality = 90

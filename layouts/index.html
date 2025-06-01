@@ -4,14 +4,34 @@
   <h1>{{ .Title }}</h1>
 </header>
 
-<div class="home-section">
+<section>
   {{ partial "home-section-heading.html" "photos" }}
   {{ partial "photo-list.html" (where .Site.RegularPages "Section" "photos" | first 2) }}
-</div>
+</section>
 
-<div class="home-section">
+<section>
   {{ partial "home-section-heading.html" "recipes" }}
   {{ partial "recipe-list.html" (where .Site.RegularPages "Section" "recipes" | first 2) }}
-</div>
+</section>
+
+<section>
+  {{ partial "home-section-heading.html" "links" }}
+  {{ range (where .Site.RegularPages "Section" "links" | first 2 ) }}
+  <article>
+    <header>
+      <h3><a href={{ .RelPermalink }}>{{ .Title }}</a></h3>
+    </header>
+
+    <div class="link">
+      {{- $domain := (urls.Parse .Params.target).Host | replaceRE "^www." "" }}
+      <b><a href={{ .Params.target }} target="_blank">{{ .Params.text }}</a></b> (<span>{{ $domain }}</span>)
+    </div>
+  
+    {{ .Summary }}
+
+    <i><a href={{ .RelPermalink }}>Read on...</a></i>
+  </article>
+  {{ end }}
+</section>
 
 {{ end }}

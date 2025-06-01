@@ -1,7 +1,7 @@
 :root {
   --text: #002b36;
   --background: #fdf6e3;
-  --primary: #73ac85;
+  --primary: #008060;
   --secondary: #d9e1d0;
   --accent: #008080;
 }
@@ -81,6 +81,10 @@ figure {
   }
 }
 
+section {
+  margin-bottom: 1em;
+}
+
 .metadata {
   list-style: none;
   padding: 0;
@@ -140,6 +144,37 @@ figure {
   }
 }
 
-.home-section {
-  margin-bottom: 1em;
+.link {
+  margin: 1em 0;
+
+  a {
+    color: var(--primary)
+  }
+
+  span {
+    opacity: 50%;
+  }
+}
+
+blockquote {
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 0.25em solid var(--accent);
+  border-radius: 0.25em;
+  position: relative;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 2em;
+  position: absolute;
+  left: 0.5em;
+  top: 0;
+  color: var(--accent);
+  line-height: 1;
 }
