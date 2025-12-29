@@ -1,0 +1,15 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "undevised/website": {
+          "permissions": "write-all"
+        },
+        "undevised/content": {
+          "permissions": "read-all"
+        }
+      }
+    }
+  }
+}
